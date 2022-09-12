@@ -1,4 +1,5 @@
 // const question = prompt('Enter Your Question');
+const body = document.body;
 let stack=[];
 document.querySelector('button').addEventListener('click',() =>
 {
@@ -15,6 +16,7 @@ document.querySelector('button').addEventListener('click',() =>
             stack.shift();
             stack.unshift(ans);
             console.log(stack);
+            render();
         }
         if(typeof(main_array[i]) === 'number' )
         {
@@ -24,7 +26,15 @@ document.querySelector('button').addEventListener('click',() =>
     console.log(stack);
 });
 // console.log(typeOf(main_array[0]));
-
+function render()
+{
+    const p= document.createElement('p');
+    for(i of stack)
+    {
+        p.innerText = `[${p.innerText} ${i}]` ;
+    }
+    body.append(p);
+}
 function operation(item1,item2,operator)
 {
     if(operator === '+')
