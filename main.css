@@ -18,6 +18,12 @@ body{
     justify-content: flex-start;
     align-items:center;
 }
+div
+{
+    display:flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
 button{
     padding: 0.8rem 1.8rem;
     background-color: #9f68e0;
@@ -37,4 +43,15 @@ input{
     margin:5rem;
     padding-left: 0;
     color: #5F4B8BFF;
+}
+@media (max-width:45rem)
+{
+    input
+    {
+        margin:2rem;
+    }
+    div
+    {
+        justify-content: center;
+    }
 }
