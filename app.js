@@ -5,6 +5,8 @@ document.querySelector('button').addEventListener('click',() =>
 {
     const question = document.querySelector('input').value;
     let main_array = question.split(',');
+    main_array.forEach(e => console.log(e));
+    console.log(isNaN(main_array[1]));
     main_array= main_array.map(e => isNaN(e)?e:+e);
     // main_array.forEach(e => console.log(typeof(e)==='number' ? true:false))
     for(let i=0;i<main_array.length;i++)
@@ -29,10 +31,11 @@ document.querySelector('button').addEventListener('click',() =>
 function render()
 {
     const p= document.createElement('p');
-    for(i of stack)
-    {
-        p.innerText = `[${p.innerText} ${i}]` ;
-    }
+    // for(i of stack)
+    // {
+    //     p.innerText = `[${p.innerText} ${i}]` ;
+    // }
+    p.innerText=`[ ${stack} ]`;
     body.append(p);
 }
 function operation(item1,item2,operator)
@@ -59,6 +62,7 @@ function operation(item1,item2,operator)
     }
 }
 // 2,10,3,+,*,5,2,*,-,3,2,^,+
+// 2,3,2,+,*,5,1,10,2,15,3,1,+,*,-,+,*,+,+
 function square(item2,item1)
 {
     if(item1 === 1)
